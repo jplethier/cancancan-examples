@@ -1,24 +1,9 @@
-# README
+# CanCanCan Examples
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was created to show how to use cancancan on ruby on rails projects, and it will follow the posts published on my medium account.
 
-Things you may want to cover:
+## TODO list:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[X] Define permissions to model user using the basic user and task structure
+[ ] Create a basic CRUD actions to add check permissions
+[ ] Add tests using rspec
