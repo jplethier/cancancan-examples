@@ -41,5 +41,6 @@ class Ability
     cannot :moderate, Task, user_id: user.id
 
     can :manage, User, id: user.id
+    cannot :destroy, User
   end
 end

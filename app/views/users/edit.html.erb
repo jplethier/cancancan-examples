@@ -1,0 +1,13 @@
+<h1>Editar usuário</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.submit "Salvar" %>
+    <%= link_to "Voltar", users_path %>
+  </div>
+<% end -%>

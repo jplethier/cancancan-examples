@@ -29,6 +29,22 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: "Tarefa excluída com sucesso"
   end
 
+  def approve
+    if @task.approve(current_user)
+      redirect_to tasks_path, notice: "Tarefa aprovada com sucesso"
+    else
+      redirect_to tasks_path, error: "Não foi possível alterar o status da tarefa"
+    end
+  end
+
+  def reprove
+    if @task.reprove(current_user)
+      redirect_to tasks_path, notice: "Tarefa reprovada com sucesso"
+    else
+      redirect_to tasks_path, error: "Não foi possível alterar o status da tarefa"
+    end
+  end
+
   private
 
   def task_params
