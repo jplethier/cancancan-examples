@@ -5,5 +5,7 @@ This project was created to show how to use cancancan on ruby on rails projects,
 ## TODO list:
 
 - [X] Define permissions to model user using the basic user and task structure
+- [X] Add devise to allow basic signup and login actions
 - [ ] Create a basic CRUD actions to add check permissions
+- [ ] Add better CSS and HTML to enhance views
 - [ ] Add tests using rspec

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_000601) do
+ActiveRecord::Schema.define(version: 2020_08_03_004046) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2020_08_03_000601) do
     t.datetime "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "approved"
+    t.datetime "approved_at"
+    t.integer "approver_id"
+    t.index ["approver_id"], name: "index_tasks_on_approver_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -36,4 +40,5 @@ ActiveRecord::Schema.define(version: 2020_08_03_000601) do
   end
 
   add_foreign_key "tasks", "users"
+  add_foreign_key "tasks", "users", column: "approver_id"
 end

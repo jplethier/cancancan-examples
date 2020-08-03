@@ -30,14 +30,14 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    return if user.nil? || user.guest?
+    return if user.nil?
 
     return can :manage, :all if user.admin?
     can :manage, Task, user_id: user.id
 
     alias_action :approve, :reprove, to: :moderate
 
-    can :moderate, Task if user.moderador?
+    can :moderate, Task if user.moderator?
     cannot :moderate, Task, user_id: user.id
 
     can :manage, User, id: user.id

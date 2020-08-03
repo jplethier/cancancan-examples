@@ -1,0 +1,24 @@
+<div>
+  <%= link_to "Adicionar tarefa", new_task_path %>
+
+  <% @tasks.each do |task| %>
+    <li>
+      <h3><%= task.title %><h3>
+      <p><%= task.description %></p>
+      <div class="actions">
+        <% if !task.approved? && can?(:approve, task) %>
+          <%= link_to "Aprovar", approve_task_path(task) %>
+        <% end %>
+        <% if task.approved? && can?(:reprove, task) %>
+          <%= link_to "Rejeitar", reprove_task_path(task) %>
+        <% end %>
+        <% if can? :edit, task %>
+          <%= link_to "Editar", edit_task_path(task) %>
+        <% end %>
+        <% if can? :destroy, task %>
+          <%= link_to "Remover", task_path(task), method: :delete %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</h3>
