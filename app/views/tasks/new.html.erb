@@ -1,20 +1,3 @@
 <h1>Criar tarefa</h1>
 
-<%= form_for @task do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-
-  <div>
-    <%= f.label :title, 'Título' %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :description, 'Descrição' %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div>
-    <%= f.submit 'Salvar' %>
-    <%= link_to "Voltar", tasks_path %>
-  </div>
-<% end -%>
+<%= render "form" %>
